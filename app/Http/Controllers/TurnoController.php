@@ -65,7 +65,7 @@ class TurnoController extends Controller
             $turno->ventanilla = $request->input('ventanilla');
             $turno->estado = 'atendiendo';
             $turno->save();
-
+            session()->flash('turno', $turno);
             return redirect('/ventanilla/' . $turno->ventanilla)->with('success', 'Turno ' . $turno->codigo_turno . ' asignado a ventanilla ' . $turno->ventanilla . '. Concepto ' . $turno->concepto);
         } else {
             return redirect('/ventanilla/' . $request->input('ventanilla'))->with('error', 'No hay más turnos disponibles. Por favor, genere nuevos turnos.');

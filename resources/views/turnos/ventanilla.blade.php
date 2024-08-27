@@ -16,6 +16,12 @@
         .alert {
             margin-bottom: 20px;
         }
+        .turno-info {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -35,6 +41,19 @@
         </div>
     @endif
 
+    <!-- Información del turno -->
+    @if (session('turno'))
+        @php
+            $turno = session('turno');
+        @endphp
+        <div class="turno-info">
+            <h4>Información del Turno</h4>
+            <p><strong>Código de Turno:</strong> {{ $turno->codigo_turno }}</p>
+            <p><strong>Concepto:</strong> {{ $turno->concepto }}</p>
+            <p><strong>Ventanilla:</strong> {{ $turno->ventanilla }}</p>
+        </div>
+    @endif
+    <br>
     <form action="/turnos/siguiente" method="POST">
         @csrf
         <input type="hidden" name="ventanilla" value="{{ $ventanilla }}">
