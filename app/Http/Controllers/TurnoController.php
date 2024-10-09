@@ -6,6 +6,11 @@ use App\Models\Turno;
 
 class TurnoController extends Controller
 {
+    public function index()
+    {
+        // ! Vista de bienvenida
+        return view('welcome');
+    }
     public function mostrarGeneradorTurnos()
     {
         return view('turnos.generar');
