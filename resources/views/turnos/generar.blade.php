@@ -92,7 +92,7 @@
         @csrf
         <div class="mb-3">
             <label for="concepto" class="form-label">Concepto</label>
-            <input type="text" class="form-control" id="concepto" name="concepto" required>
+            <input type="text" class="form-control" id="concepto" name="concepto" placeholder="Ingrese el concepto del turno" required>
         </div>
         <button class="btn btn-primary w-100">Generar Turno</button>
     </form>
